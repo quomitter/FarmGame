@@ -58,6 +58,9 @@ public class TileManager : MonoBehaviour
             case 1: 
                 selectedTile = tileArray[1]; 
                 break; 
+            case 2: 
+                selectedTile = tileArray[2]; 
+                break; 
         }
 
     }
