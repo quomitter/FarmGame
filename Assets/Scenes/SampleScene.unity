@@ -375,7 +375,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 135386212f3385545a10528a30839bb7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -913,6 +913,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bbf6d6374bfe6034e88b7e7b3caf06c7, type: 2}
   - {fileID: 11400000, guid: cdcc48318eb9d534faf5cc9f4155342c, type: 2}
   selector: 0
+  fruitPrefab: {fileID: 3675610780598672262, guid: 5b7ce079ad5f586439e69bfc11fa990b, type: 3}
 --- !u!4 &441359610
 Transform:
   m_ObjectHideFlags: 0

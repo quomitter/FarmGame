@@ -12,6 +12,7 @@ public class TileManager : MonoBehaviour
     public Vector3Int location;
     public TileBase[] tileArray;
     public int selector; 
+    public GameObject fruitPrefab; 
 
 
 
@@ -31,12 +32,13 @@ public class TileManager : MonoBehaviour
             Debug.Log(location);
             tileMap.SetTile(location, selectedTile);
         }
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) && tileMap.GetTile(location) == tileArray[2])
         {
             Vector3 mousePoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             location = tileMap.WorldToCell(mousePoint);
-            Debug.Log(location);
-            tileBase = tileMap.GetTile(location);
+            tileMap.SetTile(location, tileArray[0]);
+            Instantiate(fruitPrefab, tileMap.CellToWorld(location), Quaternion.identity);
+            
         }
         if(Input.mouseScrollDelta.y > 0){
             selector++; 
