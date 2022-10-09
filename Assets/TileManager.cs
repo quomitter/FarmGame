@@ -25,17 +25,15 @@ public class TileManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector3 mousePoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        location = tileMap.WorldToCell(mousePoint);
+        
         if (Input.GetMouseButtonDown(0))
         {
-            Vector3 mousePoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            location = tileMap.WorldToCell(mousePoint);
-            Debug.Log(location);
             tileMap.SetTile(location, selectedTile);
         }
         if (Input.GetMouseButtonDown(1) && tileMap.GetTile(location) == tileArray[2])
         {
-            Vector3 mousePoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            location = tileMap.WorldToCell(mousePoint);
             tileMap.SetTile(location, tileArray[0]);
             Instantiate(fruitPrefab, tileMap.CellToWorld(location), Quaternion.identity);
             
